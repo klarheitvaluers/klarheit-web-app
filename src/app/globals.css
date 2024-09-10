@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  .light {
+    background: #fdfdfd;
+    color: #0A0A0A;
+    border-color: #0A0A0A;
+  }
+
+  .dark {
+    background: #0A0A0A;
+    color: #fdfdfd;
+    border-color: #fdfdfd;
+  }
+}
