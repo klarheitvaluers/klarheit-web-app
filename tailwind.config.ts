@@ -16,6 +16,9 @@ const config: Config = {
           light: "#303030",
           base: "#383838"
         }
+      },
+      fontFamily: {
+        mona: "var(--font-mona)"
       }
     },
   },
