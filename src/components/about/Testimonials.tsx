@@ -1,6 +1,3 @@
-"use client"
-
-import { useState } from "react"
 import TestimonialCard from "./TestimonialCard";
 
 const initialTestimonials = [
@@ -28,11 +25,9 @@ const initialTestimonials = [
 ]
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState(initialTestimonials);
-
   return (
     <div className="flex gap-5 justify-center items-center">
-      {testimonials.map((data) => <TestimonialCard key={data.id} data={data}/>)}
+      {initialTestimonials.map((data) => <TestimonialCard key={data.id} data={data}/>)}
     </div>
   )
 }
