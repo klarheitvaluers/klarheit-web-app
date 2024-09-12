@@ -31,7 +31,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState(initialTestimonials);
 
   return (
-    <div className="flex gap-5 justify-center">
+    <div className="flex gap-5 justify-center items-center">
       {testimonials.map((data) => <TestimonialCard key={data.id} data={data}/>)}
     </div>
   )
