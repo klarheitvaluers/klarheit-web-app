@@ -15,7 +15,7 @@ const TestimonialCard = ({ data }: { data: Testimonial }) => {
         {data.description.length > 110 ? `${data.description.slice(0, 111)}...` : data.description}
       </p>
       <div className="flex gap-4 items-center pt-4">
-        <div className="rounded-full h-16 w-16 bg-orange shadow-sm shadow-orange">
+        <div className="rounded-full h-16 w-16 bg-orange">
         </div>
         <div className="flex flex-col">
           <p className="text-lg font-semibold">{data.author}</p>

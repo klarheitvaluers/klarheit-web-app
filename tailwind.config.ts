@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        surround: "rgba(0, 0, 0, 0.2) 0px 18px 50px -10px"
+      },
       colors: {
         orange: "#f95d2a",
         black: "#0A0A0A",
