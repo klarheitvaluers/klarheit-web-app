@@ -6,7 +6,7 @@ import Testimonials from "@/components/about/Testimonials";
 
 const About = () => {
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 items-center">
             <AboutCompany/>
             <Testimonials/>
             <Team/>
