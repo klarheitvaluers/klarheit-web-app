@@ -1,5 +1,5 @@
-import { Testimonial } from "@/types/testimonial"
-import Image from "next/image"
+import { Testimonial } from "@/types/testimonial";
+import Image from "next/image";
 import Comma from "@/public/inverted-comma.png";
 
 const TestimonialCard = ({ data }: { data: Testimonial }) => {
