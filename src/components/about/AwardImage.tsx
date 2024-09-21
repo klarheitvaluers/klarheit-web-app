@@ -1,10 +1,10 @@
 "use client"
 
-import useModal from "@/hooks/useModal";
+import { useSetModal } from "@/hooks/useModal";
 import Image, { StaticImageData } from "next/image";
 
 const AwardImage = ({ award }: { award: { title: string, description: string, image: StaticImageData } }) => {
-  const [_, setModal] = useModal();
+  const setModal = useSetModal();
 
   return (
     <div className="relative w-40 h-40">
