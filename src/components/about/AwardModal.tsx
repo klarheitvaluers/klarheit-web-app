@@ -9,7 +9,9 @@ const AwardModal = () => {
   
   if(modal) {
     return (
-      <div className="h-80 w-[60%] flex bg-gradient-to-br from-black to-grey-light rounded-3xl p-16 items-center gap-10 relative">
+      <>
+      <div className="fixed h-screen w-full top-0 left-0 z-50 backdrop-blur-xl">
+      <div className="h-80 w-[60%] flex bg-gradient-to-br from-black to-grey-light rounded-3xl p-16 items-center gap-10 fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="text-white absolute right-6 top-6 cursor-pointer" onClick={() => setModal(false)}>
             X
         </div>
@@ -26,6 +28,8 @@ const AwardModal = () => {
           </p>
         </div>
       </div>
+      </div>
+      </>
     )
   }
 }
