@@ -8,7 +8,7 @@ const AwardImage = ({ award }: { award: { title: string, description: string, im
 
   return (
     <div className="relative w-40 h-40">
-      <Image src={award.image} alt="trophy" fill style={{ objectFit: "contain", position: "absolute", cursor: "pointer" }} onMouseOver={() => setModal(true)}/>
+      <Image src={award.image} alt="trophy" fill style={{ objectFit: "contain", position: "absolute", cursor: "pointer" }} onClick={() => setModal(true)} className="hover:-translate-y-4"/>
     </div>
   )
 }

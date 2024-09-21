@@ -1,11 +1,8 @@
 import { awards } from "@/constants/awards";
 import AwardImage from "./AwardImage";
-import AwardModal from "./AwardModal";
 
 const Awards = () => {
   return (
-    <>
-    <AwardModal/>
     <div className="flex flex-col items-center w-full mb-[60px]">
       <div className="text-3xl py-[60px]">
         Awards
@@ -18,7 +15,6 @@ const Awards = () => {
         }
       </div>
     </div>
-    </>
   )
 }
 
