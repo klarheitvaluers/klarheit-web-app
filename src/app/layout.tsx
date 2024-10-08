@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${MonaSans.variable}`}>
+      <body className={`${MonaSans.variable} overflow-x-hidden`}>
         <Theme>
           <div className="font-mona">
             {children}
