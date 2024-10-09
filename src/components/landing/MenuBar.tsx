@@ -17,19 +17,19 @@ const MenuBar = () => {
         }}/>}
         {isVisible && <div className="bg-orange absolute w-[800px] h-[800px] rounded-full -top-96 -right-80 z-30">
           <div className="flex flex-col gap-6 text-white">
-            <Link href="/about">
+            <Link href="/about" onClick={() => setIsVisible(false)}>
               <InfoIcon className="absolute h-9 w-9 bottom-[300px] left-[65px]"/>
             </Link>
-            <Link href="/services">
+            <Link href="/services" onClick={() => setIsVisible(false)}>
               <UserCogIcon className="absolute h-9 w-9 bottom-[240px] left-[82px]"/>
             </Link>
-            <Link href="/location">
+            <Link href="/location" onClick={() => setIsVisible(false)}>
               <MapPinIcon className="absolute h-9 w-9 bottom-[182px] left-[111px]"/>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => setIsVisible(false)}>
               <MessageCircleMoreIcon className="absolute h-9 w-9 bottom-[90px] left-[195px]"/>
             </Link>
-            <Link href="/careers">
+            <Link href="/careers" onClick={() => setIsVisible(false)}>
               <GraduationCapIcon className="absolute h-9 w-9 bottom-[132px] left-[158px]"/>
             </Link>
           </div>
