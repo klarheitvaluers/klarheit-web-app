@@ -15,3 +15,7 @@
     border-color: #fdfdfd;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}

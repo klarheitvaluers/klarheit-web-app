@@ -1,7 +1,15 @@
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Theme from "@/components/Theme";
+import Image from "next/image";
+import MenuBar from "@/components/landing/MenuBar";
+import Logo from "@/public/logo.png";
+import Link from "next/link";
+const ToggleMode = dynamic(() => import("@/components/ToggleMode"), {
+  ssr: false
+});
 
 const MonaSans = localFont({
   src: [
@@ -44,6 +52,17 @@ export default function RootLayout({
       <body className={`${MonaSans.variable} overflow-x-hidden`}>
         <Theme>
           <div className="font-mona">
+            <div className="w-[90%] m-auto px-5 my-10 flex flex-row items-center justify-between">
+              <div className="flex flex-col gap-2">
+                <Link href="/">
+                  <Image src={Logo} alt="logo" width={80}/>
+                </Link>
+              </div>
+              <div className="flex items-center">
+                <ToggleMode/>
+                <MenuBar/>
+              </div>
+            </div>
             {children}
           </div>
         </Theme>

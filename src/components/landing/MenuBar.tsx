@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { GraduationCapIcon, InfoIcon, MapPinIcon, Menu, MessageCircleMoreIcon, UserCogIcon, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const MenuBar = () => {
@@ -11,10 +12,27 @@ const MenuBar = () => {
         {!isVisible && <Menu className="dark:text-white text-black h-6 w-6" onClick={() => {
           setIsVisible(true);
         }}/>}
-        {isVisible && <X className="absolute dark:text-white text-black h-6 w-6 right-5 top-[24px] z-[50]" onClick={() => {
+        {isVisible && <X className="absolute text-white h-6 w-6 right-[98px] top-[58px] z-50" onClick={() => {
           setIsVisible(false);
         }}/>}
-        {isVisible && <div className="bg-orange absolute w-[800px] h-[800px] rounded-full -top-96 -right-80">
+        {isVisible && <div className="bg-orange absolute w-[800px] h-[800px] rounded-full -top-96 -right-80 z-30">
+          <div className="flex flex-col gap-6 text-white">
+            <Link href="/about">
+              <InfoIcon className="absolute h-9 w-9 bottom-[300px] left-[65px]"/>
+            </Link>
+            <Link href="/services">
+              <UserCogIcon className="absolute h-9 w-9 bottom-[240px] left-[82px]"/>
+            </Link>
+            <Link href="/location">
+              <MapPinIcon className="absolute h-9 w-9 bottom-[182px] left-[111px]"/>
+            </Link>
+            <Link href="/contact">
+              <MessageCircleMoreIcon className="absolute h-9 w-9 bottom-[90px] left-[195px]"/>
+            </Link>
+            <Link href="/careers">
+              <GraduationCapIcon className="absolute h-9 w-9 bottom-[132px] left-[158px]"/>
+            </Link>
+          </div>
         </div>}
     </div>
   )
