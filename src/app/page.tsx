@@ -1,22 +1,16 @@
-import ToggleMode from "@/components/ToggleMode";
+import dynamic from "next/dynamic";
+import Landing from "@/components/landing/Landing";
+const Icons = dynamic(() => import("@/components/landing/Icons"), {
+  ssr: false
+});
 
 export default function Home() {
   return (
-    <div>
-      {/* just for testing configuration */}
-      <div className="h-screen p-5">
-        <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-col gap-2">
-            <h1 className="font-bold text-5xl">
-              Klarheit
-            </h1>
-            <p className="font-normal text-lg">
-              Welcome to KlarheitValuers
-            </p>
-          </div>
-          <ToggleMode/>
-        </div>
+    <>
+      <div className="relative flex flex-col w-[90%] m-auto h-[80vh] px-5 mt-10"> 
+        <Landing/>
+        <Icons/>
       </div>
-    </div>
+    </>
   );
 }
