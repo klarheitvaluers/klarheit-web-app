@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  .light {
+@layer base {
+  :root {
     background: #fdfdfd;
     color: #0A0A0A;
     border-color: #0A0A0A;
@@ -14,4 +14,8 @@
     color: #fdfdfd;
     border-color: #fdfdfd;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
