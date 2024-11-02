@@ -1,6 +1,5 @@
 // import Image from 'next/image'
 import React from 'react'
-import { FileCheck2 } from "lucide-react"
 
 const Process = () => {
   return (
