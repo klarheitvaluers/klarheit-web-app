@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 
-let marker: Marker<any> | null = null;
+let marker: Marker | null = null;
 
 const MapElement = () => {
     const mapElement = useRef<HTMLDivElement>(null);
