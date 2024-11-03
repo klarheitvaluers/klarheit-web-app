@@ -7,7 +7,9 @@ const MapElement = dynamic(() => import("@/components/location/MapElement"), {
 const Location = () => {
   return (
     <div className="flex items-center w-full h-[70vh] pl-40 pr-10 pt-10 gap-40">
-      <MapElement/>
+      <div className="h-[500px] w-[500px] rounded-full">
+        <MapElement/>
+      </div>
       <div className="flex flex-col gap-8 w-[40%]">
         <h1 className="text-3xl">Where can you <span className="text-orange">find</span> us?</h1>
         <LocationsList/>
