@@ -1,7 +1,7 @@
-import Clients from "@/components/servicesComponents/Clients"
-import Features from "@/components/servicesComponents/Features"
-import Process from "@/components/servicesComponents/Process"
-import Services from "@/components/servicesComponents/Services"
+import Clients from "@/components/services/Clients"
+import Features from "@/components/services/Features"
+import Process from "@/components/services/Process"
+import Services from "@/components/services/Services"
 
 const ServicesPage = () => {
   return (
