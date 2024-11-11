@@ -1,4 +1,3 @@
-import { GraduationCapIcon, InfoIcon, MapPinIcon, MessageCircleMoreIcon, UserCogIcon, X } from "lucide-react";
 import Link from "next/link";
 
 const MenuBar = () => {
