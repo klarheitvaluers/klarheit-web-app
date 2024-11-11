@@ -6,9 +6,9 @@ import Services from "@/components/services/Services"
 const ServicesPage = () => {
   return (
     <div>
-        <Process/>
-        <Features/>
         <Services/>
+        <Process/>
+        <Features/>        
         <Clients/>
     </div>
   )

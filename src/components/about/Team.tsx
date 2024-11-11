@@ -1,20 +1,17 @@
-import TeamMember from "./TeamMember"
+import { teamMembers } from "@/constants/teamDetails"
+import TeamCard from "./TeamCard"
 
-const Team = () => {
+const Events = () => {
   return (
-    <div className="flex flex-col items-center pb-[60px]">
-      <div className="text-3xl py-[60px]">
-        Meet Our Team
+    <div className="flex flex-col items-center pb-[60px] w-full">
+      <div className="text-3xl pt-[60px] pb-20">
+        Meet our Team
       </div>
-      <div className="grid grid-cols-3 grid-rows-3  w-fit">
-        <TeamMember row={"row-start-1"} col={"col-start-1"}/>
-        <TeamMember row={"row-start-1"} col={"col-start-3"}/>
-        <TeamMember row={"row-start-2"} col={"col-start-2"}/>
-        <TeamMember row={"row-start-3"} col={"col-start-1"}/>
-        <TeamMember row={"row-start-3"} col={"col-start-3"}/>
+      <div className="flex flex-col w-[90%] gap-20">
+        {teamMembers.map(member => <TeamCard key={member.id} id={member.id} image={member.imageURL} title={member.title} vision={member.vision} specialization={member.specialization} notableAchievements={member.notableAchievements} memberName={member.name} educationalCredential = {member.educationalCredentials} professionalBackground={member.professionalBackground} />)}
       </div>
     </div>
   )
 }
 
-export default Team;
+export default Events
