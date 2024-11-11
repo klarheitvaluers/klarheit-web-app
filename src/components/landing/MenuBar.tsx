@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 const MenuBar = () => {
-  return (    
+  return ( 
+       
           <div className="flex gap-8 text-gray-200 mr-12 text-sm">
             <Link href="/" className="hover:text-orange">Home
             </Link>
