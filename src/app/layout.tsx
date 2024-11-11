@@ -7,6 +7,7 @@ import Image from "next/image";
 import MenuBar from "@/components/landing/MenuBar";
 import Logo from "@/public/logo.png";
 import Link from "next/link";
+import Footer from "@/components/landing/Footer";
 const ToggleMode = dynamic(() => import("@/components/ToggleMode"), {
   ssr: false
 });
@@ -59,12 +60,13 @@ export default function RootLayout({
                 </Link>
               </div>
               <div className="flex items-center">
-                <ToggleMode/>
                 <MenuBar/>
+                <ToggleMode/>
               </div>
             </div>
             {children}
           </div>
+        <Footer/>  
         </Theme>
       </body>
     </html>

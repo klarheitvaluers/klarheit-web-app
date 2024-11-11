@@ -4,7 +4,7 @@ import ServicesCard from './ServicesCard'
 
 const Services = () => {
   return (
-    <div className='text-white flex flex-col w-full mt-20 gap-20'>
+    <div className='text-white flex flex-col w-full mt-10 gap-20'>
       <div className='w-full text-center text-2xl'>Services we offer at KVESPL</div>
       <div className='flex w-full px-20 justify-around'>
         <ServicesCard icon={<House/>} service={"Immovable Property Valuation"}/>
