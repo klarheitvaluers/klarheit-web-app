@@ -28,5 +28,5 @@ export function middleware(request: NextRequest) {
   }
  
 export const config = {
-  matcher: ["/api/applicant","/api/contact","/api/job", "/api/validate"]
+  matcher: ["/api/validate"]
 }

@@ -24,11 +24,7 @@ const Joblisting = () => {
   }, []);
 
   useEffect(()=>{
-    axios.get("/api/job",{
-      headers:{
-        "authorization":`Bearer ${localStorage.getItem("token")}`
-      }
-    })
+    axios.get("/api/job")
     .then(res=>setJobs(res.data))
     .catch((error)=>console.log(error))
   },[])

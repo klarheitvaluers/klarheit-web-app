@@ -22,11 +22,7 @@ const Contacts = () => {
     });
   }, []);
    useEffect(()=>{
-       axios.get("/api/contact",{
-        headers:{
-          "Authorization":`Bearer ${localStorage.getItem("token")}`
-        }
-      })
+       axios.get("/api/contact")
        .then((res)=>setContacts(res.data))
        .catch((error)=>console.log(error))
    },[])
