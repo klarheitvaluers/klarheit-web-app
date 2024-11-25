@@ -4,7 +4,7 @@ import { Job } from '@/types/job'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Careers = () => {
     // fetch the job listings from database and map the cards
     const [jobs,setJobs] = useState<Job[]>([])
 
@@ -23,4 +23,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Careers

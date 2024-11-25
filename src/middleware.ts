@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import jwt from 'jsonwebtoken';
 import { jwtVerify } from "jose"
  
 export function middleware(request: NextRequest) {
