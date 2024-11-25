@@ -58,3 +58,15 @@ export async function POST (request:NextRequest){
         return NextResponse.error()
     }    
 }
+
+export async function GET (){
+  console.log("inside")
+  try{
+    await connectdb()
+    const users = await User.find({})
+    return NextResponse.json(users)
+  }
+  catch{
+    return NextResponse.json({msg:"Couldn't fetch the contacts, try again later."},{status:500})
+  }
+}
