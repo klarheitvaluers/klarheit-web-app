@@ -23,11 +23,7 @@ const Applicants = () => {
   }, []);
 
   useEffect(()=>{
-      axios.get("/api/applicant",{
-        headers:{
-          "Authorization":`Bearer ${localStorage.getItem("token")}`
-        }
-      })
+      axios.get("/api/applicant")
       .then((res)=>setApplicants(res.data))
       .catch((error)=>console.log(error))
   },[])

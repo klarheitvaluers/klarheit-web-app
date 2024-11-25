@@ -9,11 +9,7 @@ const Careers = () => {
     const [jobs,setJobs] = useState<Job[]>([])
 
     useEffect(()=>{
-      axios.get("/api/job",{
-        headers:{
-            "Authorization":localStorage.getItem("token")
-        }
-    })
+      axios.get("/api/job")
       .then(res=>setJobs(res.data))
       .catch((error)=>console.log(error))
     },[])
