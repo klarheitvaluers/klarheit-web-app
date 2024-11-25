@@ -39,7 +39,7 @@ const Contacts = () => {
   return (
     
     <div className='flex flex-wrap gap-7 justify-center items-center'>
-      {contacts.map((element)=><EmailContacts name={element.name} email={element.email} phone={element.phone} address={element.address}/>)}
+      {contacts.map((element,index)=><EmailContacts key={index} name={element.name} email={element.email} phone={element.phone} address={element.address}/>)}
     </div>
   )
 }

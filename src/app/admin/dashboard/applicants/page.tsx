@@ -34,7 +34,7 @@ const Applicants = () => {
   return (
     <div className='flex flex-wrap gap-7 justify-center items-center'>
       {
-      applicants.map((a)=><ApplicantsCard name={a.name} email={a.email} pdfUrl={a.pdfUrl} jobID={a.jobID}/>)
+      applicants.map((a,index)=><ApplicantsCard key={index} name={a.name} email={a.email} pdfUrl={a.pdfUrl} jobID={a.jobID}/>)
     }
     </div>    
   )

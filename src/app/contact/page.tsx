@@ -1,7 +1,7 @@
 import ContactCard from '@/components/contact/ContactCard'
 import React from 'react'
 
-const page = () => {
+const ContactsPage = () => {
   return (
     <div>
         <ContactCard/>
@@ -9,4 +9,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ContactsPage

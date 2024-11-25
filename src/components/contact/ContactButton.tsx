@@ -21,7 +21,7 @@ const ContactButton = ({user}:{user:User}) => {
             //try-catch
             try{
                  // post request to backend /contact route
-                const data = await axios.post("/api/contact",{user:result.data})
+                await axios.post("/api/contact",{user:result.data})
                 // console.log(data)
                 toast.success("Email sent successfully.")
             }catch (error){
