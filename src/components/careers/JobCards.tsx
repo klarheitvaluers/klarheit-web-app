@@ -29,7 +29,11 @@ const JobCards = ({ position, description, location, salary, jobID, skills }: Jo
       setFileUrl(reader.result)
     }
 
-    axios.post("/api/applicant",{data:{...applicantData,fileUrl:fileUrl}})
+    axios.post("/api/applicant",{data:{...applicantData,fileUrl:fileUrl}},{
+      headers:{
+          "Authorization":localStorage.getItem("token")
+      }
+  })
     .then((res)=>console.log(res.data))
     .catch(error => console.log(error))
     // at last reset the state
