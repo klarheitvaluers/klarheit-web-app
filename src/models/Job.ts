@@ -24,6 +24,10 @@ const JobSchema = new mongoose.Schema({
     salary:{
         type:Number,
         required:true
+    },
+    date:{
+        type:String,
+        required:true
     }
 })
 

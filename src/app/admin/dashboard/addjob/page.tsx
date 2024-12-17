@@ -2,6 +2,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 const PostJob = () => {
   const router = useRouter()
@@ -11,13 +12,13 @@ const PostJob = () => {
     location:"",
     skills:"",
     salary:0,
-    jobID:""
+    jobID:"",
   })
 
   useEffect(() => {
     axios.get("/api/validate", {
       headers: {
-        Authorization: localStorage.getItem("token")
+        "Authorization": localStorage.getItem("token")
       }
     })
     .then((res) => console.log(res.data))
@@ -32,14 +33,26 @@ const PostJob = () => {
     // send post request to backend /api/job
     try{
       // add toast
-      const result = await axios.post("/api/job",{newjob},{
+      const currentDate = new Date();
+
+// Get the day, month, and year
+  const day = currentDate.getDate().toString().padStart(2, '0'); 
+const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); 
+const year = currentDate.getFullYear();
+
+// Format the date as DD-MM-YYYY
+const formattedDate = `${day}-${month}-${year}`;
+
+      const result = await axios.post("/api/job",{newjob,formattedDate},{
         headers:{
           "Authorization":`Bearer ${localStorage.getItem("token")}`
         }
       })
+      toast.success("Added a new job listing to database")
       console.log(result)
     }catch(error){
       console.log(error)
+      toast.error("Job posting not added, try again")
     }
   }
 
@@ -144,6 +157,7 @@ const PostJob = () => {
                   </div>
             <button className='p-2 mt-1 bg-orange text-sm rounded-sm w-28' onClick={addJob}>Add</button>        
         </div>
+        <Toaster/>
     </div>
   )
 }

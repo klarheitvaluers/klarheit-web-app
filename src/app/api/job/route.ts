@@ -4,9 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST (request:NextRequest){
     const body = await request.json()
-    const newjob = await body.newjob
+    let newjob = await body.newjob
+    const formatteddate = await body.formattedDate
     // zod validation 
     // add to database
+    console.log(newjob,formatteddate)
+    newjob = {...newjob,date:formatteddate}
     try{
         await connectdb()
         const jobAdded = new Job(newjob)
@@ -31,4 +34,18 @@ export async function GET (){
         console.log(error)
         return NextResponse.json({msg:"Couldn't fetch the jobs, try again later."},{status:500})
       }
+}
+
+export async function DELETE (request:NextRequest){
+    const body = await request.json()
+    const id = await body.id
+   
+    try{
+        await connectdb()
+        const response = await Job.findByIdAndDelete(id)
+        return NextResponse.json({msg:"deleted succesfully"})
+
+    }catch(error){
+        return NextResponse.json({error:"error in deleting"})
+    }    
 }

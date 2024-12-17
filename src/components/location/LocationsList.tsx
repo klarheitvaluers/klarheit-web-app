@@ -21,8 +21,8 @@ const LocationsList = () => {
             key={l.id}>
               <div className="text-xl">{l.id}. {l.city}</div>
               <div className="flex flex-col gap-1.5">
-                <div className="text-sm text-gray-400">{l["address-one"]}</div>
-                <div className="text-sm text-gray-400">{l["address-two"]}</div>
+                <div className="text-sm text-gray-400 tracking-normal">{l["address-one"]}</div>
+                <div className="text-sm text-gray-400 tracking-normal">{l["address-two"]}</div>
               </div>
           </div>)
         )}

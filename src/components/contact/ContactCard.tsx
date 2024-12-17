@@ -11,7 +11,8 @@ const ContactCard = () => {
         name:"",
         email:"",
         phone:0,
-        address:""
+        address:"",
+        location:""
     })
     return (
         <div className='w-full h-[80vh] flex justify-center items-center'>
@@ -23,16 +24,17 @@ const ContactCard = () => {
                         <div className=''>
                             <p className=''>Chat with us</p>
                             <p className='text-gray-600 text-sm'>Our friendly team is here to help.</p>
-                            <p className='text-gray-400 text-sm'>klarheitvaluers24@gmail.com</p>
+                            <p className='text-gray-400 text-sm'>technical.kv@klarheitvaluers.com</p>
+                            <p className='text-gray-400 text-xs'>technical.karnataka@klarheitvaluers.com</p>
                         </div>
                     </div>
-                    <div className='flex gap-4 mt-6'>
+                    <div className='flex gap-4 mt-6 text-wrap'>
                         <MapPin />
                         <div className=''>
                             <p className=''>Visit us</p>
                             <p className='text-gray-600 text-sm'>Come say hello at our office.</p>
-                            <p className='text-gray-400 text-sm'>address line 1</p>
-                            <p className='text-gray-400 text-sm'>adress line 2</p>
+                            <p className='text-gray-400 text-sm'>1AC/201-1, 2nd Floor, 1st AA Cross,2nd Main Road,</p>
+                            <p className='text-gray-400 text-sm'>Kasturi Nagar, KR Puram Hobli,Bengaluru-43</p>
                         </div>
                     </div>
                     <div className='flex gap-4 mt-6'>
@@ -41,7 +43,7 @@ const ContactCard = () => {
                             <p className=''>Call us</p>
                             <p className='text-gray-600 text-sm'>Mon-Fri 10am-5pm.</p>
                             <p className='text-gray-400 text-sm'>+91 98341 97576 (Karnataka)</p>
-                            <p className='text-gray-400 text-sm'>phone 2 (office 2)</p>
+                            <p className='text-gray-400 text-sm'>+91 95617 46996 (Pune)</p>
                         </div>
                     </div>
                     <div className='flex gap-2'>
@@ -59,10 +61,10 @@ const ContactCard = () => {
                     </div>
                     <div className='mt-10 ml-8 mr-8 pl-2'>
                         <p className='text-sm text-gray-800 pb-1'>Find us in these locations, select your nearest one!</p>
-                        <select className="p-1 bg-transparent text-sm text-gray-800 border-black border-b focus:outline-none cursor-pointer">
-                            <option>Choose your nearest location</option>
-                            <option>Bangalore</option>
-                            <option>Pune</option>
+                        <select className="p-1 bg-transparent text-sm text-gray-800 border-black border-b focus:outline-none cursor-pointer" onChange={(e)=>setUser({...user,location:e.target.value})}>
+                            <option value={""}>Choose your nearest location</option>
+                            <option value={"bangalore"}>Bangalore</option>
+                            <option value={"pune"}>Pune</option>
                         </select>
                     </div>
                     <ContactButton user={user}/>

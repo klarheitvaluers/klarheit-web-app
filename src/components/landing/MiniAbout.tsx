@@ -5,7 +5,7 @@ import AboutGif from '@/public/about.gif'
 
 const MiniAbout = () => {
   return (
-    <div className='h-[550px] bg-white text-black rounded-3xl ml-20 mr-20 flex justify-center items-center'>
+    <div className='h-[96] bg-white text-black rounded-3xl ml-20 mr-20 flex justify-center items-center mb-1'>
         <div className='w-2/5 flex justify-center items-center'>
             <Image src={AboutGif} alt='about-us-gif' width={300} height={300} className='rounded-3xl'/>
         </div>

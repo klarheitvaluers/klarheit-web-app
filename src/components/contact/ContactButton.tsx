@@ -10,7 +10,8 @@ const ContactButton = ({user}:{user:User}) => {
         name:z.string(),
         email:z.string().email(),
         phone:z.number(),
-        address:z.string()
+        address:z.string(),
+        location:z.string()
     }).required()
 
     const sendEmail = async ()=>{

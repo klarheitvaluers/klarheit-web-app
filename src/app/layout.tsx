@@ -50,9 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${MonaSans.variable} overflow-x-hidden`}>
+      <body className={`${MonaSans.variable} overflow-x-hidden flex flex-col`}>
         <Theme>
-          <div className="font-mona">
+          <div className="font-mona flex-grow">
             <div className="w-[90%] m-auto px-5 my-10 flex flex-row items-center justify-between">
               <div className="flex flex-col gap-2">
                 <Link href="/">
@@ -64,11 +64,12 @@ export default function RootLayout({
                 <ToggleMode/>
               </div>
             </div>
-            {children}
-          </div>
-        <Footer/>  
+            {children}            
+          </div> 
+          <Footer/>               
         </Theme>
-      </body>
+      </body> 
+        
     </html>
   );
 }
