@@ -85,7 +85,7 @@ export async function DELETE (request:NextRequest){
    
     try{
         await connectdb()
-        const response = await User.findByIdAndDelete(id)
+        await User.findByIdAndDelete(id)
         return NextResponse.json({msg:"deleted succesfully"})
 
     }catch(error){

@@ -42,7 +42,7 @@ export async function DELETE (request:NextRequest){
    
     try{
         await connectdb()
-        const response = await Job.findByIdAndDelete(id)
+        await Job.findByIdAndDelete(id)
         return NextResponse.json({msg:"deleted succesfully"})
 
     }catch(error){

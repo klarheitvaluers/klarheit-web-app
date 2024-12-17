@@ -1,4 +1,4 @@
-import { ChartSpline, CircleDollarSign, ClipboardCheck, Grid2x2Check, House, HousePlus, Lamp, LayoutPanelTop, MessagesSquare, TicketsPlane } from 'lucide-react'
+import { ChartSpline, CircleDollarSign, ClipboardCheck, House, HousePlus, Lamp, LayoutPanelTop, MessagesSquare, TicketsPlane } from 'lucide-react'
 import React from 'react'
 import ServicesCard from './ServicesCard'
 
