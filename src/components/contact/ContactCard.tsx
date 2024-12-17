@@ -12,7 +12,8 @@ const ContactCard = () => {
         email:"",
         phone:0,
         address:"",
-        location:""
+        location:"",
+        _id:""
     })
     return (
         <div className='w-full h-[80vh] flex justify-center items-center'>
