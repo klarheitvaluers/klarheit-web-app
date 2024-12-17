@@ -1,15 +1,19 @@
 "use client"
+
+import toast, { Toaster } from "react-hot-toast";
+
 const dashboardLayout = ({
     children,
   }: Readonly<{
     children: React.ReactNode;
   }>)=>{
    const logout =()=>{
+      toast.success("logged out successfully")
       localStorage.removeItem("token")
    }
     return(
 
-<div className="flex">
+<div className="flex h-full">
     
     <div id="default-sidebar" className="left-4 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
        <div className="h-[90vh] px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-black rounded-md">
@@ -68,8 +72,8 @@ const dashboardLayout = ({
           </ul>
        </div>
     </div>
-    <div className="w-full h-[80vh]">{children}</div>
-    
+    <div className="w-full h-full mb-10">{children}</div>
+    <Toaster/>
     </div>
     )
     }

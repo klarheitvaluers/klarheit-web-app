@@ -6,8 +6,9 @@ import TickMark from '@/public/TickMark.svg'
 import { Job } from '@/types/job';
 import { Applicant } from '@/types/applicant';
 import axios from 'axios';
+import toast, {Toaster} from 'react-hot-toast';
 
-const JobCards = ({ position, description, location, salary, jobID, skills }: Job) => {
+const JobCards = ({ position, description, location, salary, jobID, skills,date }: Job) => {
   const [showModal, setShowModal] = useState(false)
   const [fileUrl,setFileUrl] = useState<string | ArrayBuffer | null>("")
   const [applicantData,setApplicantData] = useState<Applicant>({
@@ -21,7 +22,7 @@ const JobCards = ({ position, description, location, salary, jobID, skills }: Jo
     e.preventDefault()
     console.log(applicantData)
     // add toast
-    
+    toast.success("Application submitted successfully.")
     console.log(applicantData.resumePdf)
     const reader = new FileReader();
     reader.readAsDataURL(applicantData.resumePdf as Blob);
@@ -50,10 +51,10 @@ const JobCards = ({ position, description, location, salary, jobID, skills }: Jo
       <div className='text-lg text-orange mt-4'>{position}</div>
       <div className='text-sm text-gray-400 mt-2 min-h-16'>{description}</div>
       <hr className='border border-gray-600 mt-4 mb-4' />
-      <div className='text-sm text-gray-100'>{salary}</div>
-      <div className='text-sm text-gray-100'>{skills}</div>
-      <div className='text-sm text-gray-100'>Date posted</div>
-      <div className='text-sm text-gray-100'>{jobID}</div>
+      <div className='text-sm text-gray-100'>Salary offered : Rs.{salary}</div>
+      <div className='text-sm text-gray-100'>Required skills : {skills}</div>
+      <div className='text-sm text-gray-100'>Posted on : {date}</div>
+      <div className='text-sm text-gray-100'>JOB-ID : {jobID}</div>
       <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" className='bg-orange text-sm rounded-[36px] mt-5 p-2' onClick={() => setShowModal(true)}>Apply Now</button>
       <div
         id="crud-modal"
@@ -185,7 +186,7 @@ const JobCards = ({ position, description, location, salary, jobID, skills }: Jo
           </div>
         </div>
       </div>
-
+<Toaster/>
     </div>
   )
 }

@@ -2,6 +2,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Login = () => {
     const [username,setUsername] = useState("")
@@ -14,10 +15,11 @@ const Login = () => {
         // backend request to login the admin
         axios.post("/api/login",{admin:{username,password}})
         .then((res)=>{
+          toast.success("Logged in successfully.")
           localStorage.setItem("token",`Bearer ${res.data.token}`)
           router.push("/admin/dashboard")
         })
-        .catch(error => console.log(error))
+        .catch(()=>toast.error("Invalid credentials, please login again"))
         // add toasts
         // after login redirect to admin/dashboard
         // implement forgot password if required
@@ -29,6 +31,7 @@ const Login = () => {
             <input type='text' placeholder='Enter the username' className='p-4 mt-8 text-sm text-black rounded-sm w-96' onChange={(e)=>setUsername(e.target.value)}/>
             <input type='password' placeholder='Enter the password' className='p-4 mt-8 text-sm text-black rounded-sm w-96' onChange={(e)=>setPassword(e.target.value)}/>
             <button onClick={handlelogin} className='p-4 mt-8 bg-orange text-sm rounded-sm w-96'>Login</button>        
+        <Toaster/>
         </div>
     </div>
   )

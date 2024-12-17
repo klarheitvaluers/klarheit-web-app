@@ -21,7 +21,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className='flex justify-center items-center h-[60vh] w-full flex-col'>
+    <div className='flex justify-center items-center h-[90vh] w-full flex-col'>
     <Landing/>
     <h2 className='mb-5'>You are logged in as an <span className='text-orange'> Admin</span></h2>
     <ul className='flex gap-16 text-sm text-gray-200 list-disc'>
