@@ -23,7 +23,7 @@ const Careers = () => {
       <div className='flex flex-wrap justify-center items-center gap-7 mt-10'>
       
       {
-        jobs.map((element,index)=><JobCards id={element._id} date={element.date} key={index} position={element.position} description={element.description} location={element.location} salary={element.salary} jobID={element.jobID} skills={element.skills}/>)
+        jobs.map((element,index)=><JobCards _id={element._id} date={element.date} key={index} position={element.position} description={element.description} location={element.location} salary={element.salary} jobID={element.jobID} skills={element.skills}/>)
       }
     </div>
     </div>

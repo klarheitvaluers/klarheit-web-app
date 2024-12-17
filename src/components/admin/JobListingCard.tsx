@@ -3,11 +3,11 @@ import axios from 'axios'
 import React from 'react'
 import toast, {Toaster} from 'react-hot-toast'
 
-const JobListingCard = ({id,position,location,salary,jobID,skills,description,date}:Job) => {
+const JobListingCard = ({_id,position,location,salary,jobID,skills,description,date}:Job) => {
   console.log(date)
   const deletejob = async ()=>{
     try{
-      await axios.delete("/api/job",{data:{id}})
+      await axios.delete("/api/job",{data:{_id}})
       toast.success("Job posting deleted successfully, refresh to see the changes!!")
     }catch(error){
       console.log(error)

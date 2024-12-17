@@ -3,10 +3,10 @@ import axios from 'axios'
 import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
-const EmailContacts = ({id,name,email,phone,address}:User) => {
+const EmailContacts = ({_id,name,email,phone,address}:User) => {
   const deleteContact = async()=>{
     try{
-      await axios.delete("/api/contact",{data:{id}})
+      await axios.delete("/api/contact",{data:{_id}})
       toast.success("Contact deleted successfully, refresh to see the changes!!")
     }catch(error){
       console.log(error)

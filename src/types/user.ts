@@ -4,5 +4,5 @@ export interface User {
     phone:number,
     address:string,
     location:string,
-    id:string
+    _id:string
 }

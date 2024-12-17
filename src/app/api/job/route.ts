@@ -38,7 +38,7 @@ export async function GET (){
 
 export async function DELETE (request:NextRequest){
     const body = await request.json()
-    const id = await body.id
+    const id = await body._id
    
     try{
         await connectdb()
